@@ -75,3 +75,10 @@ variable "role_permissions_boundary_arn" {
   type        = string
   description = "IAM Role Permissions Boundary ARN"
 }
+
+variable "tags" {
+  type        = map(string)
+  description = "AWS Tags to attach to AWS resources"
+
+  default = null
+}
