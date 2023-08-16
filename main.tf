@@ -27,7 +27,7 @@ locals {
     "${local.ssm_parameter_arn_base}${replace(param, "/^//", "")}"
   ]
 
-  cloudwatch_log_group_name = length(var.log_group_name) > 0 ? var.log_group_name : "scheduled-fargate/${var.app_name}" // CloudWatch Log Group name
+  cloudwatch_log_group_name = length(var.log_group_name) > 0 ? var.log_group_name : "fargate/${var.app_name}" // CloudWatch Log Group name
 
   container_definitions = [
     for def in local.definitions : {
